@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="author" content="Dimi11">
+  
+  <meta name="app.build-number" content="<%= buildNumber %>">
+  <meta name="app.build-date" content="<%= buildDate %>">
+
+  <script defer src="app-<%= buildNumber %>.js"></script>
+
+  <title>UI Test Page</title>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+<noscript>
+  <p class="noScriptStyle">
+      This app can not work without Javascript which is turned off in your browser :(
+  </p>
+</noscript>
+</html>
