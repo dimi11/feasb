@@ -30,3 +30,11 @@ npm publish
 
 
 
+## Build example application
+
+```
+npm run webpack-build-example
+```
+
+The output will be located in `build-example` folder.
+If you are using **VScode** you can use `ritwickdey.LiveServer` extension to open `index.html` file.

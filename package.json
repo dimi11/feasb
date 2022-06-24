@@ -6,7 +6,7 @@
   "scripts": {
     "win-clean": "rmdir build /s/q",
     "win-build": "npm run win-clean && tsc && copy README.md build\\README.md && copy package.json build\\package.json",
-    "webpack-build-dev": "webpack --config webpack.config.js"
+    "webpack-build-example": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "typescript"
   ],
   "author": "Dimi#11",
-  "license": "ISC",
+  "license": "Apache License 2.0",
   "bugs": {
     "url": "https://github.com/dimi11/feasb/issues"
   },
@@ -26,7 +26,6 @@
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "html-webpack-plugin": "^5.5.0",
-    "mini-css-extract-plugin": "^2.6.1",
     "ts-loader": "^9.3.0",
     "typescript": "^4.6.4",
     "webpack": "^5.73.0",

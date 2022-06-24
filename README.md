@@ -1,17 +1,16 @@
 # feasb - Front End As Should Be
 
 **feasb** is acrinym for Front-End As Should Be.
+
 It is ultra-small JS package (~7KB) developed in TypeScript that enables you writing and composing views (components) for your TypeScript front-end application.
 
-If you are stucked and unhappy with action / dispacher / store / reducer / view and all other artifacts came from React / Flux / Redux idea take a look on the code bellow.
+If you are stucked and unhappy with ``action / dispacher / store / reducer / view`` and all other artifacts came from React / Flux / Redux world take a look on the code bellow.
 
 ```typescript
 @UiBinder
 export class HomeView extends UiComponent{
-    @UiElement()
-    protected spanNumberOfCliks: HTMLSpanElement;
-    @UiElement()
-    protected btnInc: HTMLButtonElement;
+    @UiElement() protected spanNumberOfCliks: HTMLSpanElement;
+    @UiElement() protected btnInc: HTMLButtonElement;
 
     protected count = 0;
 
@@ -141,7 +140,7 @@ For example you can change the text of your button with the following code.
 this.btnInc.innerText = 'Click me';
 ```
 
-You should spot annotation `@UiElement` right above element.
+You should spot annotation `@UiElement()` right above element.
 If you do not want to use it the code would require to initilize each of elements in your constructor.
 
 For example if you remove `@UiElement()` annotation above `protected btnInc: HTMLButtonElement;` line you need to add the following code in constructor.

@@ -21,10 +21,9 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
-        filename: `bundle-[chunkhash].js`,//`app-${buildNumber}.js`,//'bundle-[chunkhash].js',//filename: 'bundle[chunkhash].js',
-        path: path.resolve(__dirname, 'dist'),
+        filename: `bundle-[chunkhash].js`,
+        path: path.resolve(__dirname, 'build-example'),
     },
-    //devtool: 'source-map',
     plugins:[
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
@@ -33,14 +32,5 @@ module.exports = {
             template: "example/static/index.template.html",
             minify: false,
         }),
-        // new CopyPlugin({
-        //     patterns: [
-        //         {
-        //             context: 'src/static',
-        //             from: 'style.css', 
-        //             to: `app-${buildNumber}.css`
-        //         }
-        //     ]
-        // }),
     ]
 };

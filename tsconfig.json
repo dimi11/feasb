@@ -11,15 +11,13 @@
         "target": "ES6",
         "resolveJsonModule": true,
         "declaration": true,
-        // "outFile": "feasb.js"
     },
-    "compileOnSave": true,
+    "compileOnSave": false,
     "exclude": [
-        "example",
         "node_modules",
+        "build",
         "test",
-        "deploy",
         "**/*.spec.ts",
-        "build"
+        "build-example"
     ]
 }

@@ -4,10 +4,8 @@ import { UiComponent } from "../../src/ui/UiComponent";
 
 @UiBinder
 export class HomeView extends UiComponent{
-    @UiElement()
-    protected spanNumberOfCliks: HTMLSpanElement;
-    @UiElement()
-    protected btnInc: HTMLButtonElement;
+    @UiElement() protected spanNumberOfCliks: HTMLSpanElement;
+    @UiElement() protected btnInc: HTMLButtonElement;
 
     protected count = 0;
 
@@ -21,10 +19,4 @@ export class HomeView extends UiComponent{
     protected btnIncClicked(e?: Event){
         this.spanNumberOfCliks.innerText = `${++this.count}`;
     }
-
-    constructor(){
-        super();
-        this.btnInc = this.findUiElement("btnInc");
-    }
-
 }
