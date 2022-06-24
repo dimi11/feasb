@@ -1,6 +1,9 @@
 # feasb - Front End As Should Be
 
-If you are stucked with action / dispacher / store / reducer / view and all other artifacts came from React and Flux idea take a look on code bellow.
+**feasb** is acrinym for Front-End As Should Be.
+It is ultra-small JS package (~7KB) developed in TypeScript that enables you writing and composing views (components) for your TypeScript front-end application.
+
+If you are stucked and unhappy with action / dispacher / store / reducer / view and all other artifacts came from React / Flux / Redux idea take a look on the code bellow.
 
 ```typescript
 @UiBinder
@@ -25,11 +28,9 @@ export class HomeView extends UiComponent{
 
 }
 ```
-As simple as that.
-Let's go step by step.
 
-**feasb** is acrinym for Front-End As Should Be.
-It is ultra-small JS package (~7KB) developed in TypeScript that enables you writing and composing views (components) for your TypeScript front-end application.
+As simple as that.
+I belive that most of readers understands very easy what this code does but let's go step by step.
 
 ## Installation ##
 

@@ -13,7 +13,6 @@ export class HomeView extends UiComponent{
 
     protected render(): string {
         return /*html*/`<div>
-                            <h1>Hello there.</h1>
                             <div>Number of cliks: <span data-uid="spanNumberOfCliks"></span></div>
                             <button data-uid="btnInc" data-event-on-click="btnIncClicked">Inc</button>
                         </div>`;
@@ -21,6 +20,11 @@ export class HomeView extends UiComponent{
 
     protected btnIncClicked(e?: Event){
         this.spanNumberOfCliks.innerText = `${++this.count}`;
+    }
+
+    constructor(){
+        super();
+        this.btnInc = this.findUiElement("btnInc");
     }
 
 }
