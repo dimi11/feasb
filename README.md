@@ -16,7 +16,7 @@ export class HomeView extends UiComponent{
 
     protected render(): string {
         return /*html*/`<div>
-                            <div>Number of cliks: <span data-uid="spanNumberOfCliks"></span></div>
+                            Number of clicks: <span data-uid="spanNumberOfCliks">0</span>
                             <button data-uid="btnInc" data-event-on-click="btnIncClicked">Inc</button>
                         </div>`;
     }
@@ -29,9 +29,13 @@ export class HomeView extends UiComponent{
 ```
 
 As simple as that.
+
 I belive that most of readers understands very easy what this code does but let's go step by step.
 
-## Installation ##
+- It creates DIV element that holds one button and label "Number of clicks"
+- If button is clicked `btnIncClicked()` method will increment counter and update this information
+
+## Installation
 
 To install this package use the following command with npm.
 
@@ -39,7 +43,7 @@ To install this package use the following command with npm.
 npm install --save feasb
 ```
 
-## Making the view ##
+## Making the view
 
 View is a peace of UI that should be represented with `class` that should extend `UiComponent` class.
 
@@ -154,7 +158,7 @@ constructor(){
 The code above is looking for element with attribute `data-uid` set to `btnInc` and creates an instance of `HTMLButtonElement` class which is exactly what annotation `@UiElement()` does automaticaly.
 
 
-### Step 3 - handle events ###
+### Step 3 - handle events
 
 If you need to handle any kind of events you should sett value for `data-on-{EVENT_NAME}` attribite. `{EVENT_NAME}` should be replaced with concrete event name. For instance for click **click** you need `data-on-click` event. For change `data-on-change` and so on.
 
@@ -175,7 +179,7 @@ export class HomeView extends UiComponent{
 
     protected render(): string {
         return /*html*/`<div>
-                            <div>Number of cliks: <span data-uid="spanNumberOfCliks"></span></div>
+                            Number of clicks: <span data-uid="spanNumberOfCliks">0</span>
                             <button data-uid="btnInc" data-event-on-click="btnIncClicked">Inc</button>
                         </div>`;
     }
@@ -205,6 +209,6 @@ constructor(){
 }
 ```
 
-## Example code ##
+## Example code
 
 Code of example above is located in [repo](/example/).

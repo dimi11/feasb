@@ -11,7 +11,7 @@ export class HomeView extends UiComponent{
 
     protected render(): string {
         return /*html*/`<div>
-                            <div>Number of cliks: <span data-uid="spanNumberOfCliks"></span></div>
+                            Number of cliks: <span data-uid="spanNumberOfCliks">0</span>
                             <button data-uid="btnInc" data-event-on-click="btnIncClicked">Inc</button>
                         </div>`;
     }
