@@ -119,10 +119,8 @@ import {UiComponent} from 'feasb/ui/UiComponent';
 import {UiElement} from "feasb/decorators/UiElementDecorator";
 
 export class HomeView extends UiComponent{
-    @UiElement()
-    protected spanNumberOfCliks: HTMLSpanElement;
-    @UiElement()
-    protected btnInc: HTMLButtonElement;
+    @UiElement() protected spanNumberOfCliks: HTMLSpanElement;
+    @UiElement() protected btnInc: HTMLButtonElement;
 
     protected render(): string {
         return `<div>
@@ -133,25 +131,27 @@ export class HomeView extends UiComponent{
 }
 ```
 
-Now whenever you need to work something with `button` you can use `this.btnInc` in your code.
+Now whenever you need to work something with `button` that you specify in your view you can use `this.btnInc` in your code.
 For example you can change the text of your button with the following code.
 
 ```typescript
 this.btnInc.innerText = 'Click me';
 ```
 
-You should spot annotation `@UiElement()` right above element.
+You should spot annotation `@UiElement()` near property declaration.
 If you do not want to use it the code would require to initilize each of elements in your constructor.
 
-For example if you remove `@UiElement()` annotation above `protected btnInc: HTMLButtonElement;` line you need to add the following code in constructor.
+For example if you remove `@UiElement()` annotation at begining of `@UiElement() protected btnInc: HTMLButtonElement;` line you will need to add the following code in constructor in order to accees identfied elements.
 
 ```typescript
+protected btnInc: HTMLButtonElement;
+
 constructor(){
     super();
     this.btnInc = this.findUiElement("btnInc");
 }
 ```
-This code is looking for element with attribute `data-uid` set to `btnInc` and creates an instance of `HTMLButtonElement` class.
+The code above is looking for element with attribute `data-uid` set to `btnInc` and creates an instance of `HTMLButtonElement` class which is exactly what annotation `@UiElement()` does automaticaly.
 
 
 ### Step 3 - handle events ###
@@ -168,10 +168,8 @@ import {UiBinder} from "feasb/decorators/UiBinderDecorator";
 
 @UiBinder
 export class HomeView extends UiComponent{
-    @UiElement()
-    protected spanNumberOfCliks: HTMLSpanElement;
-    @UiElement()
-    protected btnInc: HTMLButtonElement;
+    @UiElement() protected spanNumberOfCliks: HTMLSpanElement;
+    @UiElement() protected btnInc: HTMLButtonElement;
 
     protected count = 0;
 
@@ -191,7 +189,7 @@ export class HomeView extends UiComponent{
 
 First we created a method `btnIncClicked(e?: Event)` that will handle button clicks.
 
-Then you should spot that we added `data-event-on-click` attribute to our button and set value as name of method that we want to delegate once event occure. In our case this value should be `btnIncClicked`.
+Then you should spot that we added `data-event-on-click` attribute to our button and set the value as name of method that we want to delegate once event occure. In our case this value should be `btnIncClicked`.
 
 The last step is `@UiBinder` anotation on above class declaration. This annotation will bind all events to methods as you scpecify in `data-on-{EVENT_NAME}` attribute.
 
@@ -205,4 +203,8 @@ constructor(){
         this.btnIncClicked(e);
     };
 }
+```
 
+## Example code ##
+
+Code of example above is located in [repo](/example/).
