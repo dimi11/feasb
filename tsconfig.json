@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "experimentalDecorators": true,
-        "module": "CommonJS",
+        "module": "ES6",
         "moduleResolution": "Node",
         "noImplicitAny": true,
         "removeComments": true,
@@ -10,9 +10,12 @@
         "sourceMap": true,
         "target": "ES6",
         "resolveJsonModule": true,
+        "declaration": true,
+        // "outFile": "feasb.js"
     },
     "compileOnSave": true,
     "exclude": [
+        "example",
         "node_modules",
         "test",
         "deploy",

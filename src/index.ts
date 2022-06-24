@@ -1,6 +1,4 @@
-import { HomeView } from "./examples/HomeView"
-
-window.onload = () => {
-    let homeView = new HomeView();
-    homeView.inject(document.getElementById("app"));
-}
+import { UiBinder } from "./decorators/UiBinderDecorator";
+import { UiElement } from "./decorators/UiElementDecorator";
+import { UiComponent } from "./ui/UiComponent";
+import { UiComponentEventHandler } from "./ui/UiComponentEventHandler";
