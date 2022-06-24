@@ -1,11 +1,11 @@
 {
   "name": "feasb",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Front-End As Should Be",
   "main": "index.ts",
   "scripts": {
     "win-clean": "rmdir build /s/q",
-    "win-build": "npm run win-clean && tsc && copy README.md build\\README.md && copy package.json build\\package.json",
+    "win-build": "npm run win-clean && tsc -p build.tsconfig.json && copy README.md build\\README.md && copy package.json build\\package.json",
     "webpack-build-example": "webpack --config webpack.config.js"
   },
   "repository": {
