@@ -209,6 +209,82 @@ constructor(){
 }
 ```
 
+## Composing components
+
+If you want to put component inside of your component you can do it easily by invoking the same `inject()` method with parameter of your element that will be a holder (container).
+
+```typescript
+import { UiBinder } from "../../src/decorators/UiBinderDecorator";
+import { UiElement } from "../../src/decorators/UiElementDecorator";
+import { UiComponent } from "../../src/ui/UiComponent";
+import { ChildView } from "./ChildView";
+
+@UiBinder
+export class ParentChildView extends UiComponent{
+    @UiElement() protected divContainer:HTMLDivElement;
+
+    protected render(): string {
+        return /*html*/`<div>
+            <h2>I am parent</h2>
+            <div>
+                <small>Bellow is container for children views</small>
+                <div data-uid="divContainer"></div>
+            <div>
+        </div>`;
+    }
+
+    constructor(){
+        super();
+        new ChildView().inject(this.divContainer);
+    }
+    
+}
+```
+
+The crucial part of code is the following.
+
+```typescript
+new ChildView().inject(this.divContainer);
+```
+
+It will inject instance of `ChildView` that extends UiComponent inside of element defined as `divContainer`. Note that `divContainer` is an element with value of `data-uid` attribute set to _"divContainer"_.
+
+## Inject multiple components into the same container
+
+So far we used `inject()` method to replace `innerHTML` content of given html element. If you like to append component instead add `true` as a secound argument.
+
+```typescript
+new ChildView().inject(document.getElemenetById("app"), true);
+```
+
+If you execute code above multiple times you will get the number of `ChildView` instances as much as number of times it is executed.
+
+## Raising event from child copmponent
+
+Child component can raise event which can be handled by parent component.
+To do so parent component should add event handler by calling `addUiComponentEventHandler()` method as shown bellow.
+
+```typescript
+this.rv.addUiComponentEventHandler((eventName, value) => {
+    //implement event           
+});
+```
+
+Method `addUiComponentEventHandler()` expects functional interface with two arguments:
+
+1. eventName - string explaining which event just occured
+2. value - optional if event has to transfer some value when occurs
+
+On the other side child component that raise event should call `addUiComponentEventHandler()` functional interface method with parameters `eventName` and optional `value`, Code bellow illustrated an example of such call.
+
+```typescript
+if (this.uiComponentEventHandler){
+    this.uiComponentEventHandler("BUTTON-CHILD-CLICKED", new Date());
+}
+```
+
 ## Example code
 
-Code of example above is located in [repo](/example/).
+Code of example above together with all other exmples is located in [repo](/example/).
+
+Instruction on how to build example check [here](/docs/build-publish-info.md).
