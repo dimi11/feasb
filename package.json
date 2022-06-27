@@ -1,6 +1,6 @@
 {
   "name": "feasb",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Front-End As Should Be",
   "main": "index.ts",
   "scripts": {
