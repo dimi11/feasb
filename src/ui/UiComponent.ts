@@ -4,7 +4,7 @@ export abstract class UiComponent{
     private _decoratorUids: Array<string> = [];
 
     public template: DocumentFragment;
-    private uiComponentEventHandler: UiComponentEventHandler;
+    protected uiComponentEventHandler: UiComponentEventHandler;
 
     constructor(){
         this.template = document.createRange().createContextualFragment(this.render());
