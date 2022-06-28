@@ -1,5 +1,7 @@
 # feasb - Front End As Should Be
 
+[https://badgen.net/npm/v/feasb?icon=npm](https://www.npmjs.com/package/feasb)
+
 **feasb** is acrinym for Front-End As Should Be.
 
 It is ultra-small JS package (~7KB) developed in TypeScript that enables you writing and composing views (components) for your TypeScript front-end application.
