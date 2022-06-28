@@ -1,6 +1,8 @@
 # feasb - Front End As Should Be
 
 [![](https://badgen.net/npm/v/feasb?icon=npm)](https://www.npmjs.com/package/feasb)
+![](https://flat.badgen.net/github/license/dimi11/feasb)
+![](https://flat.badgen.net/badge/icon/Typescript?color=green&icon=typescript&label)
 
 **feasb** is acrinym for Front-End As Should Be.
 
