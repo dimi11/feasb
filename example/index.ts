@@ -3,6 +3,7 @@ import { HomeView } from "./views/HomeView";
 import { ParentChildView } from "./views/ParentChildView";
 import { CollectionOfViewsView } from "./views/CollectionOfViewsView";
 import { ProcessingEventView } from "./views/ProcessingEventView";
+import { DifferentEventsView } from "./views/DifferentEventsView";
 
 window.onload = () => {
     window.onhashchange = () =>{            
@@ -14,6 +15,8 @@ window.onload = () => {
             new CollectionOfViewsView().inject(document.getElementById("app"));
         }else if (window.location.hash === "#event-from-view"){
             new ProcessingEventView().inject(document.getElementById("app"));
+        }else if (window.location.hash === "#different-events"){
+            new DifferentEventsView().inject(document.getElementById("app"));
         }else{
             new HomeView().inject(document.getElementById("app"));
         }
